@@ -95,7 +95,7 @@ public class Snake : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Food")) {
+        if (other.gameObject.CompareTag("Food")) { 
             Grow();
         } else if (other.gameObject.CompareTag("Obstacle")) {
             PlayerManager.isGameOver = true;
@@ -112,6 +112,7 @@ public class Snake : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        ScoreController.scoreValue = 0;
     }
 
     public void ResumeGame()
@@ -123,5 +124,6 @@ public class Snake : MonoBehaviour
     public void Home()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        ScoreController.scoreValue = 0;
     }
 }
