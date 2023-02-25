@@ -24,21 +24,26 @@ public class Snake : MonoBehaviour
 
     private void Update()
     {
-        
-        if (direction.x != 0f)
+
+        if(direction.x != 0f)
         {
-            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) {
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
                 direction = Vector2.up;
-            } else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
                 direction = Vector2.down;
             }
-        }
-        
+        } 
         else if (direction.y != 0f)
         {
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)) {
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
                 direction = Vector2.right;
-            } else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)) {
+            }
+            else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+            {
                 direction = Vector2.left;
             }
         }
@@ -125,5 +130,11 @@ public class Snake : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         ScoreController.scoreValue = 0;
+    }
+
+    public void Pickupkey()
+    {
+        Debug.Log("Key picked up");
+        ScoreController.scoreValue += 10;
     }
 }
