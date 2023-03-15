@@ -7,18 +7,19 @@ public class MainMenu : MonoBehaviour
 {
     public void PlayGame()
     {
-        Time.timeScale = 1; 
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void Coop()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
     public void QuitGame()
     {
         Debug.Log("Quit");
         Application.Quit();
-    }
-
-    public void PauseGame()
-    {
-        Time.timeScale = 0;
     }
 }
